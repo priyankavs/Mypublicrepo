@@ -1,0 +1,73 @@
+<h1>Edit</h1>
+<br>
+<form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
+    <div class="form-horizontal">
+        <h4>Employees</h4>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Employee Name</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="employee_name" class = "control-label col-md-2">
+              <div *ngIf="formData.controls.employee_name.errors && (formData.controls.employee_name.dirty || formData.controls.employee_name.touched)" class="alert-danger">
+                <div *ngIf="formData.controls.employee_name.errors.required">
+                Name is required
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Designation</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="designation" class = "control-label col-md-2">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Manager id</label> 
+            <div class="col-md-10">
+                <select data-val="true" formControlName="manager_id">
+                    <option *ngFor="let emp of employee" value="{{emp.employee_id}}">{{emp.employee_name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Contact No</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="contact_no" class = "control-label col-md-2">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Email id</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="email_id" class = "control-label col-md-2">
+              <div
+              *ngIf="formData.controls.email_id.errors && 
+              (formData.controls.email_id.dirty||formData.controls.email_id.touched)"
+              class="alert-danger">
+          <div *ngIf="formData.controls.email_id.errors.required">
+          Email id is required
+      </div>
+      <div *ngIf="formData.controls.email_id.errors.pattern">
+          Email id is not valid
+      </div>
+      
+      </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Skillsets</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="skillsets" class = "control-label col-md-2">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Edit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+

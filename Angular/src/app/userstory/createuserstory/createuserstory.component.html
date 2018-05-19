@@ -1,0 +1,44 @@
+<h1>Create</h1>
+<br>
+<form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
+    <div class="form-horizontal">
+
+        <h4>userstory</h4>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Project Id</label> 
+            <div class="col-md-10">
+                <select data-val="true" formControlName="project_id">
+                    <option *ngFor="let user of userstory" value="{{user.project_id}}">{{user.project_id}}</option>
+                </select>
+              <div *ngIf="formData.controls.project_id.errors && (formData.controls.project_id.dirty || formData.controls.project_id.touched)" class="alert-danger">
+                    <div *ngIf="formData.controls.project_id.errors.required">
+                    Required field
+                    </div>
+                    </div>
+              
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Story</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="story" class = "control-label col-md-2">
+              <div *ngIf="formData.controls.story.errors && (formData.controls.story.dirty || formData.controls.story.touched)" class="alert-danger">
+                <div *ngIf="formData.controls.story.errors.required">
+                Required field
+                </div>
+                </div>
+            </div>
+        </div>
+
+       
+      
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>

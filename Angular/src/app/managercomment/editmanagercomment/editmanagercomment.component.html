@@ -1,0 +1,41 @@
+<h1>Edit</h1>
+<br>
+<form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
+    <div class="form-horizontal">
+
+        <h4>Manager comments</h4>
+        
+        <div class="form-group">
+            <label class = "control-label col-md-2">Comments</label> 
+
+            <div class="col-md-10">
+              <input type="text" formControlName="comments" class = "control-label col-md-2">
+
+            <div *ngIf="formData.controls.comments.errors && (formData.controls.comments.dirty || formData.controls.comments.touched)" class="alert-danger">
+            <div *ngIf="formData.controls.comments.errors.required">
+            Comment is required
+            </div>
+            </div>
+            </div>
+
+        </div>
+        
+
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Project task id</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="projecttask_id" class = "control-label col-md-2">
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+

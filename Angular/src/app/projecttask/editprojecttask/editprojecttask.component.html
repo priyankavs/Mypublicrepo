@@ -1,0 +1,86 @@
+<h1>Create</h1>
+<br>
+<form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
+    <div class="form-horizontal">
+
+        <h4>Project Task</h4>
+        
+        <div class="form-group">
+            <label class = "control-label col-md-2">Employee id assigned to</label> 
+
+            <div class="col-md-10">
+              <input type="text" formControlName="assignedto" class = "control-label col-md-2">
+            <div *ngIf="formData.controls.assignedto.errors && (formData.controls.assignedto.dirty || formData.controls.assignedto.touched)" class="alert-danger">
+            <div *ngIf="formData.controls.assignedto.errors.required">
+            Field is required
+            </div>
+            </div>
+            </div>
+
+        </div>
+        
+
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Task start date</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="taskstartdate" class = "control-label col-md-2">
+              <div *ngIf="formData.controls.taskstartdate.errors && (formData.controls.taskstartdate.dirty || formData.controls.taskstartdate.touched)" class="alert-danger">
+                    <div *ngIf="formData.controls.taskstartdate.errors.required">
+                    Field is required
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Task end date</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="taskenddate" class = "control-label col-md-2">
+              <div *ngIf="formData.controls.taskenddate.errors && (formData.controls.taskenddate.dirty || formData.controls.taskenddate.touched)" class="alert-danger">
+                    <div *ngIf="formData.controls.taskenddate.errors.required">
+                    Field is required
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Task completion date</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="taskcompletion" class = "control-label col-md-2">
+              <div *ngIf="formData.controls.taskcompletion.errors && (formData.controls.taskcompletion.dirty || formData.controls.taskcompletion.touched)" class="alert-danger">
+                    <div *ngIf="formData.controls.taskcompletion.errors.required">
+                    Field is required
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Userstory id</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="userstory_id" class = "control-label col-md-2">
+              <div *ngIf="formData.controls.userstory_id.errors && (formData.controls.userstory_id.dirty || formData.controls.userstory_id.touched)" class="alert-danger">
+                    <div *ngIf="formData.controls.userstory_id.errors.required">
+                    Field is required
+                    </div>
+                    </div>
+             
+          
+   
+      
+      </div>
+
+        </div>
+
+       
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" [disabled]="!formData.valid"/>
+            </div>
+        </div>
+    </div>
+
+

@@ -1,0 +1,60 @@
+<h1>Delete</h1>
+<br>
+
+<form  (ngSubmit)="onClickSubmit()">
+    <div class="form-horizontal">
+
+        <h4>Employee</h4>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Employee Name</label> 
+            <div class="col-md-10">
+            <label class = "control-label col-md-2">{{employee?.employee_name}}</label> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Designation</label> 
+            <div class="col-md-10">
+            <label class = "control-label col-md-2">{{employee?.designation}}</label> 
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Manager id</label> 
+            <div class="col-md-10">
+            <label class = "control-label col-md-2">{{employee?.manager_id}}</label>
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Contact No</label> 
+            <div class="col-md-10">
+            <label class = "control-label col-md-2">{{employee?.contact_no}}</label> 
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label class = "control-label col-md-2">Email id</label> 
+          <div class="col-md-10">
+          <label class = "control-label col-md-2">{{employee?.email_id}}</label>
+            </div>
+      </div>
+
+      <div class="form-group">
+        <label class = "control-label col-md-2"> Skillsets</label> 
+        <div class="col-md-10">
+        <label class = "control-label col-md-2">{{employee?.skillsets}}</label>
+          </div>
+    </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
